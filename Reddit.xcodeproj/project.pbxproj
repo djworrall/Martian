@@ -15,6 +15,7 @@
 		04E07BB715C60AF1000079BD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04E07BB415C60AF1000079BD /* InfoPlist.strings */; };
 		04E07BB815C60AF1000079BD /* Reddit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04E07BB015C60AE7000079BD /* Reddit-Info.plist */; };
 		04E07BBB15C60AF8000079BD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E07BB915C60AF8000079BD /* MainMenu.xib */; };
+		04E07BBD15C60BD5000079BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E07BBC15C60BD5000079BD /* main.m */; };
 		04ED31FC15C495F200BB265D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04ED31FB15C495F200BB265D /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		04E07BB315C60AF1000079BD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = "Reddit for Mac OS X/en.lproj/Credits.rtf"; sourceTree = SOURCE_ROOT; };
 		04E07BB515C60AF1000079BD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "Reddit for Mac OS X/en.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
 		04E07BBA15C60AF8000079BD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "Reddit for Mac OS X/en.lproj/MainMenu.xib"; sourceTree = SOURCE_ROOT; };
+		04E07BBC15C60BD5000079BD /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Reddit for Mac OS X/main.m"; sourceTree = SOURCE_ROOT; };
 		04ED31F715C495F200BB265D /* Reddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04ED31FB15C495F200BB265D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		04ED31FE15C495F200BB265D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -110,6 +112,7 @@
 		04ED320215C495F200BB265D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				04E07BBC15C60BD5000079BD /* main.m */,
 				04E07BB215C60AF1000079BD /* Credits.rtf */,
 				04E07BB415C60AF1000079BD /* InfoPlist.strings */,
 				04E07BB015C60AE7000079BD /* Reddit-Info.plist */,
@@ -189,6 +192,7 @@
 				048D055915C60A7000B43974 /* AppDelegate.m in Sources */,
 				048D055E15C60A7000B43974 /* OutlineDelegate.m in Sources */,
 				048D056015C60A7000B43974 /* REOutlineView.m in Sources */,
+				04E07BBD15C60BD5000079BD /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,8 +281,8 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Alien Blue/Reddit-Prefix.pch";
-				INFOPLIST_FILE = "Alien Blue/Reddit-Info.plist";
+				GCC_PREFIX_HEADER = "Reddit for Mac OS X/Reddit-Prefix.pch";
+				INFOPLIST_FILE = "Reddit for Mac OS X/Reddit-Info.plist";
 				PRODUCT_NAME = Reddit;
 				WRAPPER_EXTENSION = app;
 			};
@@ -289,8 +293,8 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Alien Blue/Reddit-Prefix.pch";
-				INFOPLIST_FILE = "Alien Blue/Reddit-Info.plist";
+				GCC_PREFIX_HEADER = "Reddit for Mac OS X/Reddit-Prefix.pch";
+				INFOPLIST_FILE = "Reddit for Mac OS X/Reddit-Info.plist";
 				PRODUCT_NAME = Reddit;
 				WRAPPER_EXTENSION = app;
 			};

@@ -155,7 +155,7 @@
     
     [[data objectForKey:@"Subscriptions"] addObject:@"untitled"];
     [aOutlineView reloadData];
-    [[[self rowForIndex:row] textField] setEditable:YES]; //NULL
+    [[[self rowForIndex:row] textField] setEditable:YES];
     [aOutlineView reloadData];
     [self selectRow:row];
     [self editRow:row];
