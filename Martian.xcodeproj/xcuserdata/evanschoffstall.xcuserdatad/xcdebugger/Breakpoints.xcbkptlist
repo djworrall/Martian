@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Reddit for Mac OS X/OutlineDelegate.m"
-         timestampString = "365307734.659747"
+         timestampString = "365308439.486811"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "136"
-         endingLineNumber = "136"
+         startingLineNumber = "124"
+         endingLineNumber = "124"
          landmarkName = "-defaultMenuForRow:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Reddit for Mac OS X/OutlineDelegate.m"
-         timestampString = "365307734.659747"
+         timestampString = "365308439.486811"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "112"
-         endingLineNumber = "112"
+         startingLineNumber = "100"
+         endingLineNumber = "100"
          landmarkName = "-outlineView:child:ofItem:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Reddit for Mac OS X/OutlineDelegate.m"
-         timestampString = "365307734.659747"
+         timestampString = "365308439.486811"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "83"
-         endingLineNumber = "83"
+         startingLineNumber = "71"
+         endingLineNumber = "71"
          landmarkName = "-outlineView:numberOfChildrenOfItem:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -73,11 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Reddit for Mac OS X/OutlineDelegate.m"
-         timestampString = "365307734.659747"
+         timestampString = "365308439.486811"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "169"
-         endingLineNumber = "169"
+         startingLineNumber = "157"
+         endingLineNumber = "157"
          landmarkName = "-addSubreddit:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -86,11 +86,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Reddit for Mac OS X/OutlineDelegate.m"
-         timestampString = "365307734.659747"
+         timestampString = "365308439.486811"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "181"
-         endingLineNumber = "181"
+         startingLineNumber = "169"
+         endingLineNumber = "169"
          landmarkName = "-textDidEndEditing:"
          landmarkType = "5">
       </FileBreakpoint>

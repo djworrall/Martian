@@ -35,23 +35,11 @@
             
             for (int i = 0; i != [[dataPlist objectForKey:@"outlineData"] count]; ++i)
             {
-                NSLog(@"%@",[[[dataPlist objectForKey:@"outlineData"] objectAtIndex:i] class]);
                 if ([[[dataPlist objectForKey:@"outlineData"] objectAtIndex:i] isKindOfClass:[NSMutableDictionary class]])
                     [self setSubscriptions:[[[dataPlist objectForKey:@"outlineData"] objectAtIndex:i] objectForKey:@"Subscriptions"]];
             }
         }
-        
-        [aOutlineView reloadData];
-        
-        NSLog(@"%@",data);
-        NSLog(@"%@",subscriptions);
-
-        
-        /*
-        subscriptions = [NSMutableArray arrayWithObjects:@"Technology",@"Science",@"Apple",nil];
-        data = [NSMutableArray arrayWithObjects:@"Front page",@"Messages",[NSDictionary dictionaryWithObject:subscriptions forKey:@"Subscriptions"], nil];
-         */
-        
+    
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidEndEditing:) name:@"NSControlTextDidEndEditingNotification" object:nil];
     }
     

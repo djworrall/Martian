@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "04ED31F615C495F200BB265D"
-               BuildableName = "Reddit.app"
-               BlueprintName = "Reddit"
-               ReferencedContainer = "container:Reddit.xcodeproj">
+               BuildableName = "Martian.app"
+               BlueprintName = "Martian"
+               ReferencedContainer = "container:Martian.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "04ED31F615C495F200BB265D"
-            BuildableName = "Reddit.app"
-            BlueprintName = "Reddit"
-            ReferencedContainer = "container:Reddit.xcodeproj">
+            BuildableName = "Martian.app"
+            BlueprintName = "Martian"
+            ReferencedContainer = "container:Martian.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -52,9 +52,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "04ED31F615C495F200BB265D"
-            BuildableName = "Reddit.app"
-            BlueprintName = "Reddit"
-            ReferencedContainer = "container:Reddit.xcodeproj">
+            BuildableName = "Martian.app"
+            BlueprintName = "Martian"
+            ReferencedContainer = "container:Martian.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -70,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "04ED31F615C495F200BB265D"
-            BuildableName = "Reddit.app"
-            BlueprintName = "Reddit"
-            ReferencedContainer = "container:Reddit.xcodeproj">
+            BuildableName = "Martian.app"
+            BlueprintName = "Martian"
+            ReferencedContainer = "container:Martian.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
