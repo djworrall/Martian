@@ -1,0 +1,340 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04ED31FC15C495F200BB265D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04ED31FB15C495F200BB265D /* Cocoa.framework */; };
+		04ED320615C495F200BB265D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04ED320415C495F200BB265D /* InfoPlist.strings */; };
+		04ED320815C495F200BB265D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ED320715C495F200BB265D /* main.m */; };
+		04ED320C15C495F200BB265D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 04ED320A15C495F200BB265D /* Credits.rtf */; };
+		04ED320F15C495F200BB265D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ED320E15C495F200BB265D /* AppDelegate.m */; };
+		04ED321215C495F200BB265D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04ED321015C495F200BB265D /* MainMenu.xib */; };
+		04ED322115C49BCB00BB265D /* OutlineDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ED322015C49BCB00BB265D /* OutlineDelegate.m */; };
+		04FDF4EB15C4D99500C1E7CC /* REOutlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FDF4EA15C4D99500C1E7CC /* REOutlineView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		04ED31F715C495F200BB265D /* Reddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04ED31FB15C495F200BB265D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		04ED31FE15C495F200BB265D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		04ED31FF15C495F200BB265D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		04ED320015C495F200BB265D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		04ED320315C495F200BB265D /* Reddit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Reddit-Info.plist"; sourceTree = "<group>"; };
+		04ED320515C495F200BB265D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		04ED320715C495F200BB265D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		04ED320915C495F200BB265D /* Reddit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reddit-Prefix.pch"; sourceTree = "<group>"; };
+		04ED320B15C495F200BB265D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		04ED320D15C495F200BB265D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		04ED320E15C495F200BB265D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		04ED321115C495F200BB265D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		04ED321F15C49BCB00BB265D /* OutlineDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutlineDelegate.h; sourceTree = "<group>"; };
+		04ED322015C49BCB00BB265D /* OutlineDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutlineDelegate.m; sourceTree = "<group>"; };
+		04FDF4E915C4D99500C1E7CC /* REOutlineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REOutlineView.h; sourceTree = "<group>"; };
+		04FDF4EA15C4D99500C1E7CC /* REOutlineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REOutlineView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04ED31F415C495F200BB265D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04ED31FC15C495F200BB265D /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		048D053E15C5D23500B43974 /* OutlineView */ = {
+			isa = PBXGroup;
+			children = (
+				04ED321F15C49BCB00BB265D /* OutlineDelegate.h */,
+				04ED322015C49BCB00BB265D /* OutlineDelegate.m */,
+				04FDF4E915C4D99500C1E7CC /* REOutlineView.h */,
+				04FDF4EA15C4D99500C1E7CC /* REOutlineView.m */,
+			);
+			name = OutlineView;
+			sourceTree = "<group>";
+		};
+		048D054015C5D24900B43974 /* Toolbar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Toolbar;
+			sourceTree = "<group>";
+		};
+		04ED31EC15C495F200BB265D = {
+			isa = PBXGroup;
+			children = (
+				04ED320115C495F200BB265D /* Alien Blue */,
+				04ED320215C495F200BB265D /* Supporting Files */,
+			);
+			sourceTree = "<group>";
+		};
+		04ED31F815C495F200BB265D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04ED31F715C495F200BB265D /* Reddit.app */,
+			);
+			name = Products;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		04ED31FA15C495F200BB265D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04ED31FB15C495F200BB265D /* Cocoa.framework */,
+				04ED31FD15C495F200BB265D /* Other Frameworks */,
+			);
+			name = Frameworks;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		04ED31FD15C495F200BB265D /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04ED31FE15C495F200BB265D /* AppKit.framework */,
+				04ED31FF15C495F200BB265D /* CoreData.framework */,
+				04ED320015C495F200BB265D /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		04ED320115C495F200BB265D /* Alien Blue */ = {
+			isa = PBXGroup;
+			children = (
+				04ED320D15C495F200BB265D /* AppDelegate.h */,
+				04ED320E15C495F200BB265D /* AppDelegate.m */,
+				04ED321B15C49B0400BB265D /* Interface */,
+				04ED321015C495F200BB265D /* MainMenu.xib */,
+			);
+			path = "Alien Blue";
+			sourceTree = "<group>";
+		};
+		04ED320215C495F200BB265D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				04ED31F815C495F200BB265D /* Products */,
+				04ED31FA15C495F200BB265D /* Frameworks */,
+				04ED320315C495F200BB265D /* Reddit-Info.plist */,
+				04ED320415C495F200BB265D /* InfoPlist.strings */,
+				04ED320715C495F200BB265D /* main.m */,
+				04ED320915C495F200BB265D /* Reddit-Prefix.pch */,
+				04ED320A15C495F200BB265D /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			path = "Alien Blue";
+			sourceTree = "<group>";
+		};
+		04ED321B15C49B0400BB265D /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				048D054015C5D24900B43974 /* Toolbar */,
+				048D053E15C5D23500B43974 /* OutlineView */,
+			);
+			name = Interface;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04ED31F615C495F200BB265D /* Reddit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04ED321515C495F200BB265D /* Build configuration list for PBXNativeTarget "Reddit" */;
+			buildPhases = (
+				04ED31F315C495F200BB265D /* Sources */,
+				04ED31F415C495F200BB265D /* Frameworks */,
+				04ED31F515C495F200BB265D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Reddit;
+			productName = "Alien Blue";
+			productReference = 04ED31F715C495F200BB265D /* Reddit.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04ED31EE15C495F200BB265D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "evan schoffstall";
+			};
+			buildConfigurationList = 04ED31F115C495F200BB265D /* Build configuration list for PBXProject "Reddit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 04ED31EC15C495F200BB265D;
+			productRefGroup = 04ED31F815C495F200BB265D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04ED31F615C495F200BB265D /* Reddit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04ED31F515C495F200BB265D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04ED320615C495F200BB265D /* InfoPlist.strings in Resources */,
+				04ED320C15C495F200BB265D /* Credits.rtf in Resources */,
+				04ED321215C495F200BB265D /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04ED31F315C495F200BB265D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04ED320815C495F200BB265D /* main.m in Sources */,
+				04ED320F15C495F200BB265D /* AppDelegate.m in Sources */,
+				04ED322115C49BCB00BB265D /* OutlineDelegate.m in Sources */,
+				04FDF4EB15C4D99500C1E7CC /* REOutlineView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		04ED320415C495F200BB265D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04ED320515C495F200BB265D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		04ED320A15C495F200BB265D /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04ED320B15C495F200BB265D /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		04ED321015C495F200BB265D /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04ED321115C495F200BB265D /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		04ED321315C495F200BB265D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		04ED321415C495F200BB265D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		04ED321615C495F200BB265D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Alien Blue/Reddit-Prefix.pch";
+				INFOPLIST_FILE = "Alien Blue/Reddit-Info.plist";
+				PRODUCT_NAME = Reddit;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		04ED321715C495F200BB265D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Alien Blue/Reddit-Prefix.pch";
+				INFOPLIST_FILE = "Alien Blue/Reddit-Info.plist";
+				PRODUCT_NAME = Reddit;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04ED31F115C495F200BB265D /* Build configuration list for PBXProject "Reddit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04ED321315C495F200BB265D /* Debug */,
+				04ED321415C495F200BB265D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04ED321515C495F200BB265D /* Build configuration list for PBXNativeTarget "Reddit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04ED321615C495F200BB265D /* Debug */,
+				04ED321715C495F200BB265D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 04ED31EE15C495F200BB265D /* Project object */;
+}
