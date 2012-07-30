@@ -7,6 +7,7 @@
 //
 
 #import "OutlineDelegate.h"
+#import "AppDelegate.h"
 
 @implementation OutlineDelegate
 @synthesize data, aOutlineView, subscriptions;
@@ -15,12 +16,41 @@
 {
     if (self == [super self])
     {
-        subscriptions = [NSMutableArray arrayWithObjects:@"Technology",@"Science",@"Apple",nil];
-        data = [NSMutableArray new];
+        if (![[NSBundle mainBundle] pathForResource:@"Data" ofType:@"plist"])
+        {
+            NSMutableDictionary * dataPlist = [NSMutableDictionary new];
+            
+            [dataPlist setObject:@"YES" forKey:@"firstLaunch"];
+            
+            [self setSubscriptions:[NSMutableArray arrayWithObjects:@"Technology",@"Science",@"Apple",nil]];
+            [self setData:[NSMutableArray arrayWithObjects:@"Front page",@"Messages",[NSDictionary dictionaryWithObject:subscriptions forKey:@"Subscriptions"], nil]];
+            
+            [dataPlist writeToFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Data.plist"] atomically:YES];
+        }
+        else
+        {
+            NSMutableDictionary * dataPlist = [AppDelegate dataPlist];
+            
+            [self setData:[dataPlist objectForKey:@"outlineData"]];
+            
+            for (int i = 0; i != [[dataPlist objectForKey:@"outlineData"] count]; ++i)
+            {
+                NSLog(@"%@",[[[dataPlist objectForKey:@"outlineData"] objectAtIndex:i] class]);
+                if ([[[dataPlist objectForKey:@"outlineData"] objectAtIndex:i] isKindOfClass:[NSMutableDictionary class]])
+                    [self setSubscriptions:[[[dataPlist objectForKey:@"outlineData"] objectAtIndex:i] objectForKey:@"Subscriptions"]];
+            }
+        }
         
-        [data addObject:@"Front page"];
-        [data addObject:@"Messages"];
-        [data addObject:[NSDictionary dictionaryWithObject:subscriptions forKey:@"Subscriptions"]];
+        [aOutlineView reloadData];
+        
+        NSLog(@"%@",data);
+        NSLog(@"%@",subscriptions);
+
+        
+        /*
+        subscriptions = [NSMutableArray arrayWithObjects:@"Technology",@"Science",@"Apple",nil];
+        data = [NSMutableArray arrayWithObjects:@"Front page",@"Messages",[NSDictionary dictionaryWithObject:subscriptions forKey:@"Subscriptions"], nil];
+         */
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidEndEditing:) name:@"NSControlTextDidEndEditingNotification" object:nil];
     }

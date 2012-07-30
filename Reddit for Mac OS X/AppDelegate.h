@@ -15,4 +15,6 @@
 @property (assign) IBOutlet NSWindow * window;
 @property (assign) IBOutlet OutlineDelegate * outlineDelegate;
 
++ (NSMutableDictionary*)dataPlist;
+
 @end
