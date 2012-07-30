@@ -16,6 +16,7 @@
 		0421102615C6F1D500195D4A /* AppDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 04E07BC215C6EEE6000079BD /* AppDelegate.h */; };
 		0421102915C6F1FC00195D4A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E07BCB15C6EEE6000079BD /* main.m */; };
 		0421102C15C6F21300195D4A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0421102A15C6F21300195D4A /* MainMenu.xib */; };
+		044223F315C6F51E00BF8F16 /* Z3ZIo.icns in Resources */ = {isa = PBXBuildFile; fileRef = 044223F215C6F51E00BF8F16 /* Z3ZIo.icns */; };
 		04ED31FC15C495F200BB265D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04ED31FB15C495F200BB265D /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		0421102B15C6F21300195D4A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Martian/en.lproj/MainMenu.xib; sourceTree = SOURCE_ROOT; };
+		044223F215C6F51E00BF8F16 /* Z3ZIo.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Z3ZIo.icns; sourceTree = SOURCE_ROOT; };
 		04E07BC215C6EEE6000079BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Martian/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		04E07BC315C6EEE6000079BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Martian/AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		04E07BCB15C6EEE6000079BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Martian/main.m; sourceTree = SOURCE_ROOT; };
@@ -123,6 +125,7 @@
 		04ED320215C495F200BB265D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				044223F215C6F51E00BF8F16 /* Z3ZIo.icns */,
 				0421102A15C6F21300195D4A /* MainMenu.xib */,
 				04E07BD315C6EF41000079BD /* Martian-Info.plist */,
 				04E07BCD15C6EEE6000079BD /* Martian-Prefix.pch */,
@@ -188,6 +191,7 @@
 			files = (
 				0421101815C6F15700195D4A /* Martian-Info.plist in Resources */,
 				0421102C15C6F21300195D4A /* MainMenu.xib in Resources */,
+				044223F315C6F51E00BF8F16 /* Z3ZIo.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
