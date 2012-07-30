@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0421102115C6F1A300195D4A /* OutlineDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E07BCF15C6EEE6000079BD /* OutlineDelegate.m */; };
+		0421102115C6F1A300195D4A /* MainSelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E07BCF15C6EEE6000079BD /* MainSelectionController.m */; };
 		0421102215C6F1A400195D4A /* REOutlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E07BD115C6EEE6000079BD /* REOutlineView.m */; };
 		0421102315C6F1A900195D4A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E07BC315C6EEE6000079BD /* AppDelegate.m */; };
 		0421102915C6F1FC00195D4A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E07BCB15C6EEE6000079BD /* main.m */; };
@@ -71,12 +71,12 @@
 		04B5B4B715C72BCF005FE07E /* SBJsonWriter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SBJsonWriter.m; path = Martian/SBJason/SBJsonWriter.m; sourceTree = SOURCE_ROOT; };
 		04B5B4C415C73E7C005FE07E /* RedditController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RedditController.h; path = Martian/RedditController.h; sourceTree = SOURCE_ROOT; };
 		04B5B4C515C73E7C005FE07E /* RedditController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RedditController.m; path = Martian/RedditController.m; sourceTree = SOURCE_ROOT; };
-		04E07BC215C6EEE6000079BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Martian/AppDelegate.h; sourceTree = SOURCE_ROOT; };
-		04E07BC315C6EEE6000079BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Martian/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		04E07BC215C6EEE6000079BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = AppDelegate.h; path = Martian/AppDelegate.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		04E07BC315C6EEE6000079BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = AppDelegate.m; path = Martian/AppDelegate.m; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		04E07BCB15C6EEE6000079BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Martian/main.m; sourceTree = SOURCE_ROOT; };
 		04E07BCD15C6EEE6000079BD /* Martian-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Martian-Prefix.pch"; path = "Martian/Martian-Prefix.pch"; sourceTree = SOURCE_ROOT; };
-		04E07BCE15C6EEE6000079BD /* OutlineDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OutlineDelegate.h; path = Martian/OutlineDelegate.h; sourceTree = SOURCE_ROOT; };
-		04E07BCF15C6EEE6000079BD /* OutlineDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = OutlineDelegate.m; path = Martian/OutlineDelegate.m; sourceTree = SOURCE_ROOT; };
+		04E07BCE15C6EEE6000079BD /* MainSelectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = MainSelectionController.h; path = Martian/MainSelectionController.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		04E07BCF15C6EEE6000079BD /* MainSelectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = MainSelectionController.m; path = Martian/MainSelectionController.m; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		04E07BD015C6EEE6000079BD /* REOutlineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = REOutlineView.h; path = Martian/REOutlineView.h; sourceTree = SOURCE_ROOT; };
 		04E07BD115C6EEE6000079BD /* REOutlineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = REOutlineView.m; path = Martian/REOutlineView.m; sourceTree = SOURCE_ROOT; };
 		04E07BD315C6EF41000079BD /* Martian-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Martian-Info.plist"; path = "Martian/Martian-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -115,8 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				0421102A15C6F21300195D4A /* MainMenu.xib */,
-				04E07BCE15C6EEE6000079BD /* OutlineDelegate.h */,
-				04E07BCF15C6EEE6000079BD /* OutlineDelegate.m */,
+				04E07BCE15C6EEE6000079BD /* MainSelectionController.h */,
+				04E07BCF15C6EEE6000079BD /* MainSelectionController.m */,
 				04E07BD015C6EEE6000079BD /* REOutlineView.h */,
 				04E07BD115C6EEE6000079BD /* REOutlineView.m */,
 			);
@@ -292,7 +292,7 @@
 				04B5B4C615C73E91005FE07E /* RedditController.m in Sources */,
 				0421102315C6F1A900195D4A /* AppDelegate.m in Sources */,
 				0421102215C6F1A400195D4A /* REOutlineView.m in Sources */,
-				0421102115C6F1A300195D4A /* OutlineDelegate.m in Sources */,
+				0421102115C6F1A300195D4A /* MainSelectionController.m in Sources */,
 				04B5B4B815C72BE8005FE07E /* NSObject+SBJson.m in Sources */,
 				04B5B4BF15C72BF9005FE07E /* SBJsonStreamWriterAccumulator.m in Sources */,
 				04B5B4C215C72BFD005FE07E /* SBJsonUTF8Stream.m in Sources */,

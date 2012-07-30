@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 
 @implementation AppDelegate
-@synthesize outlineDelegate;
+@synthesize mainSelectionController;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
@@ -25,14 +25,14 @@
     if ([[data objectForKey:@"firstLaunch"] isEqualTo:@"YES"])
         [data setObject:@"NO" forKey:@"firstLaunch"];
         
-    if ([outlineDelegate data])
-        [data setObject:[outlineDelegate data] forKey:@"outlineData"];
+    if ([mainSelectionController data])
+        [data setObject:[mainSelectionController data] forKey:@"outlineData"];
     
     NSMutableArray * expandedItems = [NSMutableArray new];
     
-    for (id item in [outlineDelegate data])
+    for (id item in [mainSelectionController data])
     {
-        if ([item isKindOfClass:[NSDictionary class]] && [[outlineDelegate aOutlineView] isItemExpanded:item])
+        if ([[mainSelectionController mainSelectionOutline] isItemExpanded:item])
             [expandedItems addObject:[[item allKeys] objectAtIndex:0]];
     }
     

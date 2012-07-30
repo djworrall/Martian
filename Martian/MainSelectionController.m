@@ -1,25 +1,25 @@
 //
-//  outlineDelegate.m
+//  mainSelectionController.m
 //  Alien Blue
 //
 //  Created by evan schoffstall on 7/28/12.
 //  Copyright (c) 2012 evan schoffstall. All rights reserved.
 //
 
-#import "OutlineDelegate.h"
+#import "MainSelectionController.h"
 #import "AppDelegate.h"
 
-@implementation OutlineDelegate
-@synthesize data, aOutlineView, subscriptions, redditController;
+@implementation MainSelectionController
+@synthesize data, mainSelectionOutline, subscriptions, redditController;
 
 - (void)awakeFromNib
 {
     for (NSString * item in [[AppDelegate dataPlist] objectForKey:@"expandedItems"])
     {
         if ([item isEqualToString:@"Subscriptions"])
-            [aOutlineView expandItem:[aOutlineView itemAtRow:2]];
+            [mainSelectionOutline expandItem:[mainSelectionOutline itemAtRow:2]];
         
-        [aOutlineView reloadData];
+        [mainSelectionOutline reloadData];
     }
 }
 
@@ -159,23 +159,23 @@
 
 - (NSTableCellView*)rowForIndex:(NSInteger)index
 {
-    return [[[[aOutlineView outlineTableColumn] tableView] rowViewAtRow:index makeIfNecessary:YES] viewAtColumn:0];
+    return [[[[mainSelectionOutline outlineTableColumn] tableView] rowViewAtRow:index makeIfNecessary:YES] viewAtColumn:0];
 }
 
 - (void)selectRow:(NSInteger)row
 {
-    [aOutlineView selectRowIndexes:[NSIndexSet indexSetWithIndex:row] byExtendingSelection:NO];
+    [mainSelectionOutline selectRowIndexes:[NSIndexSet indexSetWithIndex:row] byExtendingSelection:NO];
 }
 
 - (void)editRow:(NSInteger)row
 {
-    [aOutlineView editColumn:0 row:row withEvent:[NSApp currentEvent] select:YES];
+    [mainSelectionOutline editColumn:0 row:row withEvent:[NSApp currentEvent] select:YES];
 }
 
 - (void)removeSubreddit:(id)sender
 {
     [[subscriptions objectForKey:@"Subscriptions"] removeObject:[[rowToRemove textField] stringValue]];
-    [aOutlineView reloadData];
+    [mainSelectionOutline reloadData];
 }
 
 - (void)addSubreddit:(id)sender
@@ -183,9 +183,9 @@
     NSInteger row = [[subscriptions objectForKey:@"Subscriptions"] count]+[data count];
     
     [[subscriptions objectForKey:@"Subscriptions"] addObject:@"untitled"];
-    [aOutlineView reloadData];
+    [mainSelectionOutline reloadData];
     [[[self rowForIndex:row] textField] setEditable:YES];
-    [aOutlineView reloadData];
+    [mainSelectionOutline reloadData];
     [self selectRow:row];
     [self editRow:row];
 }
@@ -194,7 +194,7 @@
 {
     NSInteger row = [subscriptions count]+[data count]-1;
     [[[self rowForIndex:row] textField] setEditable:NO];
-    [aOutlineView reloadData];
+    [mainSelectionOutline reloadData];
     [self selectRow:row];
 }
 

@@ -7,14 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "OutlineDelegate.h"
+#import "MainSelectionController.h"
 #import "REOutlineView.h"
 #import "RedditController.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow * window;
-@property (assign) IBOutlet OutlineDelegate * outlineDelegate;
+@property (assign) IBOutlet MainSelectionController * mainSelectionController;
 
 + (NSMutableDictionary*)dataPlist;
 

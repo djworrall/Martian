@@ -1,5 +1,5 @@
 //
-//  outlineDelegate.h
+//  mainSelectionController.h
 //  Alien Blue
 //
 //  Created by evan schoffstall on 7/28/12.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "RedditController.h"
 
-@interface OutlineDelegate : NSObject <NSOutlineViewDelegate, NSOutlineViewDataSource>
+@interface MainSelectionController : NSObject <NSOutlineViewDelegate, NSOutlineViewDataSource>
 {
 @private
     NSTableCellView * rowToRemove;
@@ -18,7 +18,7 @@
 @property (strong) NSMutableArray * data;
 @property (strong) NSMutableDictionary * subscriptions;
 
-@property (assign) IBOutlet NSOutlineView * aOutlineView;
+@property (assign) IBOutlet NSOutlineView * mainSelectionOutline;
 
 @property (strong) RedditController * redditController;
 
