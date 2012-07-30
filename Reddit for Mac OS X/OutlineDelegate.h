@@ -14,7 +14,8 @@
     NSTableCellView * rowToRemove;
 }
 
-@property (strong) NSMutableDictionary * data;
+@property (strong) NSMutableArray * data;
+@property (strong) NSMutableArray * subscriptions;
 @property (assign) IBOutlet NSOutlineView * aOutlineView;
 
 - (NSTableCellView*)rowForIndex:(NSInteger)index;

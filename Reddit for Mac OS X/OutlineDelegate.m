@@ -9,19 +9,18 @@
 #import "OutlineDelegate.h"
 
 @implementation OutlineDelegate
-@synthesize data, aOutlineView;
+@synthesize data, aOutlineView, subscriptions;
 
 - (id)init
 {
     if (self == [super self])
     {
-        NSMutableArray * subreddits = [NSMutableArray arrayWithObjects:@"Technology",@"Science",@"Apple",nil];
+        subscriptions = [NSMutableArray arrayWithObjects:@"Technology",@"Science",@"Apple",nil];
+        data = [NSMutableArray new];
         
-        data = [NSMutableDictionary new];
-        
-        [data setValue:@"" forKey:@"Front page"];
-        [data setValue:@"" forKey:@"Messages"];
-        [data setValue:subreddits forKey:@"Subscriptions"];
+        [data addObject:@"Front page"];
+        [data addObject:@"Messages"];
+        [data addObject:[NSDictionary dictionaryWithObject:subscriptions forKey:@"Subscriptions"]];
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidEndEditing:) name:@"NSControlTextDidEndEditingNotification" object:nil];
     }
@@ -32,6 +31,13 @@
 - (NSView*)outlineView:(NSOutlineView *)outlineView viewForTableColumn:(NSTableColumn *)tableColumn item:(id)item
 {
     NSTableCellView * aView = [outlineView makeViewWithIdentifier:[tableColumn identifier] owner:self];
+    
+    if ([item isKindOfClass:[NSDictionary class]])
+        item = [[item allKeys] objectAtIndex:0];
+    
+    if (item == @"")
+        [[aView textField] setSelectable:NO]; // Broken; need a way to set the selectablity of the cell, not just the textField.
+        
     [[aView textField] setStringValue:item];
     return aView;
 }
@@ -40,16 +46,14 @@
 {
     if (item == nil)
     {
-        return [[data allKeys] count];
+        return [data count];
     }
-    else if ([[data objectForKey:item] respondsToSelector:@selector(count)])
+    else if ([item isKindOfClass:[NSDictionary class]])
     {
-        return [[data objectForKey:item] count];
+        return [[item objectForKey:[[item allKeys] objectAtIndex:0]] count];
     }
-    else
-    {
-        return 0;
-    }
+    
+    return 0;
 }
 
 - (BOOL)outlineView:(NSOutlineView *)outlineView isItemExpandable:(id)item
@@ -58,10 +62,8 @@
     {
         return YES;
     }
-    else
-    {
-        return NO;
-    }
+    
+    return NO;
 }
 
 - (BOOL)outlineView:(NSOutlineView *)outlineView shouldEditTableColumn:(NSTableColumn *)tableColumn item:(id)item
@@ -73,16 +75,14 @@
 {
     if (item == nil)
     {
-        return [[data allKeys] objectAtIndex:index];
+        return [data objectAtIndex:index];
     }
-    else if ([[data objectForKey:item] respondsToSelector:@selector(count)])
+    else if ([item isKindOfClass:[NSDictionary class]])
     {
-        return [[data objectForKey:item] objectAtIndex:index];
+        return [[item objectForKey:[[item allKeys] objectAtIndex:0]] objectAtIndex:index];
     }
-    else
-    {
-        return nil;
-    }
+    
+    return nil;
 }
 
 - (NSMenu*)defaultMenuForRow:(NSString*)stringRow
@@ -103,7 +103,7 @@
         
         return theMenu;
     }
-    else if ([[data objectForKey:@"Subscriptions"] containsObject:[[aRow textField] stringValue]])
+    else if ([subscriptions containsObject:[[aRow textField] stringValue]])
     {
         [self selectRow:row];
         
@@ -132,15 +132,15 @@
 
 - (void)removeSubreddit:(id)sender
 {
-    [[data objectForKey:@"Subscriptions"] removeObject:[[rowToRemove textField] stringValue]];
+    [[self subscriptions] removeObject:[[rowToRemove textField] stringValue]];
     [aOutlineView reloadData];
 }
 
 - (void)addSubreddit:(id)sender
 {
-    NSInteger row = [[data objectForKey:@"Subscriptions"] count]+[[data allKeys] count];
+    NSInteger row = [subscriptions count]+[data count];
     
-    [[data objectForKey:@"Subscriptions"] addObject:@"untitled"];
+    [subscriptions addObject:@"untitled"];
     [aOutlineView reloadData];
     [[[self rowForIndex:row] textField] setEditable:YES];
     [aOutlineView reloadData];
@@ -150,7 +150,7 @@
 
 - (void)textDidEndEditing:(NSNotification *)notification
 {
-    NSInteger row = [[data objectForKey:@"Subscriptions"] count]+[[data allKeys] count]-1;
+    NSInteger row = [subscriptions count]+[data count]-1;
     [[[self rowForIndex:row] textField] setEditable:NO];
     [aOutlineView reloadData];
     [self selectRow:row];
