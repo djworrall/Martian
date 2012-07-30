@@ -13,8 +13,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    [[outlineDelegate aOutlineView] expandItem:@"Subscriptions"];
-    [[outlineDelegate aOutlineView] reloadData];
+    
 }
 
 - (void)applicationWillTerminate:(NSNotification *)notification
@@ -27,7 +26,17 @@
         [data setObject:@"NO" forKey:@"firstLaunch"];
         
     if ([outlineDelegate data])
-    [   data setObject:[outlineDelegate data] forKey:@"outlineData"];
+        [data setObject:[outlineDelegate data] forKey:@"outlineData"];
+    
+    NSMutableArray * expandedItems = [NSMutableArray new];
+    
+    for (id item in [outlineDelegate data])
+    {
+        if ([item isKindOfClass:[NSDictionary class]] && [[outlineDelegate aOutlineView] isItemExpanded:item])
+            [expandedItems addObject:[[item allKeys] objectAtIndex:0]];
+    }
+    
+    [data setObject:expandedItems forKey:@"expandedItems"];
     
     [data writeToFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Data.plist"] atomically:YES];
 }

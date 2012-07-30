@@ -16,7 +16,7 @@
 }
 
 @property (strong) NSMutableArray * data;
-@property (strong) NSMutableArray * subscriptions;
+@property (strong) NSMutableDictionary * subscriptions;
 
 @property (assign) IBOutlet NSOutlineView * aOutlineView;
 

@@ -12,6 +12,17 @@
 @implementation OutlineDelegate
 @synthesize data, aOutlineView, subscriptions, redditController;
 
+- (void)awakeFromNib
+{
+    for (NSString * item in [[AppDelegate dataPlist] objectForKey:@"expandedItems"])
+    {
+        if ([item isEqualToString:@"Subscriptions"])
+            [aOutlineView expandItem:[aOutlineView itemAtRow:2]];
+        
+        [aOutlineView reloadData];
+    }
+}
+
 - (id)init
 {
     if (self == [super self])
@@ -24,7 +35,7 @@
             
             [dataPlist setObject:@"YES" forKey:@"firstLaunch"];
             
-            [self setSubscriptions:[NSMutableArray arrayWithObjects:@"Technology",@"Science",@"Apple",nil]];
+            [self setSubscriptions:[NSMutableDictionary dictionaryWithObject:[NSMutableArray arrayWithObjects:@"Technology",@"Science",@"Apple",nil] forKey:@"Subscriptions"]];
             [self setData:[NSMutableArray arrayWithObjects:@"Front page",@"Messages",[NSDictionary dictionaryWithObject:subscriptions forKey:@"Subscriptions"], nil]];
             
             [dataPlist writeToFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Data.plist"] atomically:YES];
@@ -38,7 +49,7 @@
             for (int i = 0; i != [[dataPlist objectForKey:@"outlineData"] count]; ++i)
             {
                 if ([[[dataPlist objectForKey:@"outlineData"] objectAtIndex:i] isKindOfClass:[NSMutableDictionary class]])
-                    [self setSubscriptions:[[[dataPlist objectForKey:@"outlineData"] objectAtIndex:i] objectForKey:@"Subscriptions"]];
+                    [self setSubscriptions:[[dataPlist objectForKey:@"outlineData"] objectAtIndex:i]];
             }
         }
     
@@ -134,7 +145,7 @@
         
         return theMenu;
     }
-    else if ([subscriptions containsObject:[[aRow textField] stringValue]])
+    else if ([[subscriptions objectForKey:@"Subscriptions"] containsObject:[[aRow textField] stringValue]])
     {
         [self selectRow:row];
         
@@ -163,15 +174,15 @@
 
 - (void)removeSubreddit:(id)sender
 {
-    [[self subscriptions] removeObject:[[rowToRemove textField] stringValue]];
+    [[subscriptions objectForKey:@"Subscriptions"] removeObject:[[rowToRemove textField] stringValue]];
     [aOutlineView reloadData];
 }
 
 - (void)addSubreddit:(id)sender
 {
-    NSInteger row = [subscriptions count]+[data count];
+    NSInteger row = [[subscriptions objectForKey:@"Subscriptions"] count]+[data count];
     
-    [subscriptions addObject:@"untitled"];
+    [[subscriptions objectForKey:@"Subscriptions"] addObject:@"untitled"];
     [aOutlineView reloadData];
     [[[self rowForIndex:row] textField] setEditable:YES];
     [aOutlineView reloadData];

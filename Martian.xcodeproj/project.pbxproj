@@ -114,6 +114,7 @@
 		048D056115C60A7600B43974 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				0421102A15C6F21300195D4A /* MainMenu.xib */,
 				04E07BCE15C6EEE6000079BD /* OutlineDelegate.h */,
 				04E07BCF15C6EEE6000079BD /* OutlineDelegate.m */,
 				04E07BD015C6EEE6000079BD /* REOutlineView.h */,
@@ -134,7 +135,6 @@
 		04B5B49D15C72B83005FE07E /* Junk */ = {
 			isa = PBXGroup;
 			children = (
-				0421102A15C6F21300195D4A /* MainMenu.xib */,
 				04E07BD315C6EF41000079BD /* Martian-Info.plist */,
 				04E07BCD15C6EEE6000079BD /* Martian-Prefix.pch */,
 				04E07BCB15C6EEE6000079BD /* main.m */,
@@ -317,6 +317,7 @@
 				0421102B15C6F21300195D4A /* en */,
 			);
 			name = MainMenu.xib;
+			path = "../Alien Blue";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

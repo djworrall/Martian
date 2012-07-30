@@ -112,11 +112,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Martian/OutlineDelegate.m"
-         timestampString = "365376129.146177"
+         timestampString = "365384464.535044"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "108"
-         endingLineNumber = "108"
+         startingLineNumber = "119"
+         endingLineNumber = "119"
          landmarkName = "-outlineView:shouldSelectItem:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -131,6 +131,19 @@
          startingLineNumber = "24"
          endingLineNumber = "24"
          landmarkName = "-willDisplayViewForItem:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Martian/OutlineDelegate.m"
+         timestampString = "365384464.535044"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "76"
+         endingLineNumber = "76"
+         landmarkName = "-outlineView:numberOfChildrenOfItem:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
