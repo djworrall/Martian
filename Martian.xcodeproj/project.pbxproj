@@ -13,7 +13,6 @@
 		0421102915C6F1FC00195D4A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E07BCB15C6EEE6000079BD /* main.m */; };
 		0421102C15C6F21300195D4A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0421102A15C6F21300195D4A /* MainMenu.xib */; };
 		044223F315C6F51E00BF8F16 /* Z3ZIo.icns in Resources */ = {isa = PBXBuildFile; fileRef = 044223F215C6F51E00BF8F16 /* Z3ZIo.icns */; };
-		04B5B47315C70037005FE07E /* RedditController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B47215C70037005FE07E /* RedditController.m */; };
 		04B5B4B815C72BE8005FE07E /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B4A015C72BCF005FE07E /* NSObject+SBJson.m */; };
 		04B5B4B915C72BEC005FE07E /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B4A315C72BCF005FE07E /* SBJsonParser.m */; };
 		04B5B4BA15C72BEE005FE07E /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B4A515C72BCF005FE07E /* SBJsonStreamParser.m */; };
@@ -26,6 +25,7 @@
 		04B5B4C115C72BFC005FE07E /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B4B315C72BCF005FE07E /* SBJsonTokeniser.m */; };
 		04B5B4C215C72BFD005FE07E /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B4B515C72BCF005FE07E /* SBJsonUTF8Stream.m */; };
 		04B5B4C315C72BFF005FE07E /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B4B715C72BCF005FE07E /* SBJsonWriter.m */; };
+		04B5B4C615C73E91005FE07E /* RedditController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B4C515C73E7C005FE07E /* RedditController.m */; };
 		04ED31FC15C495F200BB265D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04ED31FB15C495F200BB265D /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,8 +44,6 @@
 /* Begin PBXFileReference section */
 		0421102B15C6F21300195D4A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Martian/en.lproj/MainMenu.xib; sourceTree = SOURCE_ROOT; };
 		044223F215C6F51E00BF8F16 /* Z3ZIo.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Z3ZIo.icns; sourceTree = SOURCE_ROOT; };
-		04B5B47115C70037005FE07E /* RedditController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedditController.h; sourceTree = SOURCE_ROOT; };
-		04B5B47215C70037005FE07E /* RedditController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedditController.m; sourceTree = SOURCE_ROOT; };
 		04B5B49F15C72BCF005FE07E /* NSObject+SBJson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSObject+SBJson.h"; path = "Martian/SBJason/NSObject+SBJson.h"; sourceTree = SOURCE_ROOT; };
 		04B5B4A015C72BCF005FE07E /* NSObject+SBJson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSObject+SBJson.m"; path = "Martian/SBJason/NSObject+SBJson.m"; sourceTree = SOURCE_ROOT; };
 		04B5B4A115C72BCF005FE07E /* SBJson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SBJson.h; path = Martian/SBJason/SBJson.h; sourceTree = SOURCE_ROOT; };
@@ -71,6 +69,8 @@
 		04B5B4B515C72BCF005FE07E /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SBJsonUTF8Stream.m; path = Martian/SBJason/SBJsonUTF8Stream.m; sourceTree = SOURCE_ROOT; };
 		04B5B4B615C72BCF005FE07E /* SBJsonWriter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SBJsonWriter.h; path = Martian/SBJason/SBJsonWriter.h; sourceTree = SOURCE_ROOT; };
 		04B5B4B715C72BCF005FE07E /* SBJsonWriter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SBJsonWriter.m; path = Martian/SBJason/SBJsonWriter.m; sourceTree = SOURCE_ROOT; };
+		04B5B4C415C73E7C005FE07E /* RedditController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RedditController.h; path = Martian/RedditController.h; sourceTree = SOURCE_ROOT; };
+		04B5B4C515C73E7C005FE07E /* RedditController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RedditController.m; path = Martian/RedditController.m; sourceTree = SOURCE_ROOT; };
 		04E07BC215C6EEE6000079BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Martian/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		04E07BC315C6EEE6000079BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Martian/AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		04E07BCB15C6EEE6000079BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Martian/main.m; sourceTree = SOURCE_ROOT; };
@@ -125,8 +125,8 @@
 		04B5B47015C70021005FE07E /* Backend */ = {
 			isa = PBXGroup;
 			children = (
-				04B5B47115C70037005FE07E /* RedditController.h */,
-				04B5B47215C70037005FE07E /* RedditController.m */,
+				04B5B4C415C73E7C005FE07E /* RedditController.h */,
+				04B5B4C515C73E7C005FE07E /* RedditController.m */,
 			);
 			name = Backend;
 			sourceTree = "<group>";
@@ -289,10 +289,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0421102915C6F1FC00195D4A /* main.m in Sources */,
+				04B5B4C615C73E91005FE07E /* RedditController.m in Sources */,
 				0421102315C6F1A900195D4A /* AppDelegate.m in Sources */,
 				0421102215C6F1A400195D4A /* REOutlineView.m in Sources */,
 				0421102115C6F1A300195D4A /* OutlineDelegate.m in Sources */,
-				04B5B47315C70037005FE07E /* RedditController.m in Sources */,
 				04B5B4B815C72BE8005FE07E /* NSObject+SBJson.m in Sources */,
 				04B5B4BF15C72BF9005FE07E /* SBJsonStreamWriterAccumulator.m in Sources */,
 				04B5B4C215C72BFD005FE07E /* SBJsonUTF8Stream.m in Sources */,

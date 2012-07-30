@@ -12,6 +12,7 @@
 @interface RedditController : NSObject
 
 @property (assign) NSInteger requests;
+@property (strong) NSTimer * requestTimer;
 
 - (void)willDisplayViewForItem:(NSString*)item;
 

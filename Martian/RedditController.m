@@ -9,14 +9,15 @@
 #import "RedditController.h"
 
 @implementation RedditController
-@synthesize requests;
+@synthesize requests, requestTimer;
 
 - (id)init
 {
     if (self == [super self])
     {
         // We need to conform to Reddit's standards
-        [NSTimer timerWithTimeInterval:2 target:self selector:@selector(resetRequests:) userInfo:nil repeats:YES];
+        requestTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(resetRequests:) userInfo:nil repeats:YES];
+        [requestTimer fire];
     }
     return self;
 }
