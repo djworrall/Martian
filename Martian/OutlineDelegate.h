@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RedditController.h"
 
 @interface OutlineDelegate : NSObject <NSOutlineViewDelegate, NSOutlineViewDataSource>
 {
@@ -16,7 +17,10 @@
 
 @property (strong) NSMutableArray * data;
 @property (strong) NSMutableArray * subscriptions;
+
 @property (assign) IBOutlet NSOutlineView * aOutlineView;
+
+@property (strong) RedditController * redditController;
 
 - (NSTableCellView*)rowForIndex:(NSInteger)index;
 

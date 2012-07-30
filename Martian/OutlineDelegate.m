@@ -10,12 +10,14 @@
 #import "AppDelegate.h"
 
 @implementation OutlineDelegate
-@synthesize data, aOutlineView, subscriptions;
+@synthesize data, aOutlineView, subscriptions, redditController;
 
 - (id)init
 {
     if (self == [super self])
     {
+        redditController = [RedditController new];
+        
         if (![[NSBundle mainBundle] pathForResource:@"Data" ofType:@"plist"])
         {
             NSMutableDictionary * dataPlist = [NSMutableDictionary new];
@@ -101,6 +103,17 @@
     }
     
     return nil;
+}
+
+- (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(id)item
+{
+    if (item == @"")
+        return NO;
+    
+    [NSThread detachNewThreadSelector:@selector(willDisplayViewForItem:) toTarget:redditController withObject:item];
+    //[redditController willDisplayViewForItem:item];
+    
+    return YES;
 }
 
 - (NSMenu*)defaultMenuForRow:(NSString*)stringRow

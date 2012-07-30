@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "OutlineDelegate.h"
 #import "REOutlineView.h"
+#import "RedditController.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
