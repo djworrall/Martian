@@ -24,10 +24,6 @@
         [data setValue:subreddits forKey:@"Subscriptions"];
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidEndEditing:) name:@"NSControlTextDidEndEditingNotification" object:nil];
-        
-        [aOutlineView reloadData];
-        [aOutlineView expandItem:@"Subscriptions"];
-        [aOutlineView reloadData];
     }
     
     return self;
@@ -37,14 +33,6 @@
 {
     NSTableCellView * aView = [outlineView makeViewWithIdentifier:[tableColumn identifier] owner:self];
     [[aView textField] setStringValue:item];
-    
-    /*
-    if ([[data objectForKey:@"Subscriptions"] containsObject:item])
-    {
-        [[aView textField] setEditable:YES];
-    }
-    */
-    
     return aView;
 }
 
@@ -72,7 +60,6 @@
     }
     else
     {
-        
         return NO;
     }
 }
@@ -159,7 +146,6 @@
     [aOutlineView reloadData];
     [self selectRow:row];
     [self editRow:row];
-    
 }
 
 - (void)textDidEndEditing:(NSNotification *)notification

@@ -46,11 +46,6 @@
     return [self defaultMenuForRow:(int)[self rowAtPoint:[self convertPoint:[event locationInWindow] fromView:nil]]];
 }
 
-- (void)textDidEndEditing:(NSNotification *)notification
-{
-    
-}
-
 - (void)controlTextDidEndEditing:(NSNotification *)notification
 {
     [[self delegate] performSelector:@selector(textDidEndEditing:) withObject:notification];
