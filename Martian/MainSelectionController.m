@@ -203,7 +203,7 @@
 
 - (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(id)item
 {
-    NSArray * execptions = [NSArray arrayWithObjects:@"Main",@"Subscriptions",@"",nil];
+    NSArray * execptions = [data allKeys];
     
     if ([execptions containsObject:item])
         return NO;
