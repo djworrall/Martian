@@ -1301,13 +1301,13 @@
 			<object class="NSWindowTemplate" id="972006081">
 				<int key="NSWindowStyleMask">15</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{335, 390}, {544, 341}}</string>
+				<string key="NSWindowRect">{{335, 390}, {600, 341}}</string>
 				<int key="NSWTFlags">1954021376</int>
 				<string key="NSWindowTitle">Martian</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
 				<nil key="NSUserInterfaceItemIdentifier"/>
-				<string key="NSWindowContentMinSize">{544, 341}</string>
+				<string key="NSWindowContentMinSize">{600, 341}</string>
 				<object class="NSView" key="NSWindowView" id="439893737">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
@@ -1424,7 +1424,7 @@
 													<bytes key="NSWhite">MC41AA</bytes>
 												</object>
 											</object>
-											<double key="NSRowHeight">38</double>
+											<double key="NSRowHeight">24</double>
 											<int key="NSTvFlags">1379926016</int>
 											<reference key="NSDelegate"/>
 											<reference key="NSDataSource"/>
@@ -1491,13 +1491,13 @@
 							<double key="NSMagnification">1</double>
 						</object>
 					</array>
-					<string key="NSFrameSize">{544, 341}</string>
+					<string key="NSFrameSize">{600, 341}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="451552379"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1920, 1178}}</string>
-				<string key="NSMinSize">{544, 363}</string>
+				<string key="NSMinSize">{600, 363}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>

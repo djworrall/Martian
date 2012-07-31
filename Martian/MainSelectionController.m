@@ -29,7 +29,7 @@
             
             [dataPlist setObject:@"YES" forKey:@"firstLaunch"];
             
-            [self setData:[NSMutableDictionary dictionaryWithObjectsAndKeys:[NSMutableArray arrayWithObjects:@"Front page",@"Messages",nil],@"Main",[NSMutableArray arrayWithObjects:@"Technology",@"Science",@"Apple",nil],@"Subscriptions",nil]];
+            [self setData:[NSMutableDictionary dictionaryWithObjectsAndKeys:[NSMutableArray arrayWithObjects:@"Front page",@"Messages",nil],@"Dashboard",[NSMutableArray arrayWithObjects:@"Technology",@"Science",@"Apple",nil],@"Subscriptions",nil]];
             
             [dataPlist writeToFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Data.plist"] atomically:YES];
         }
