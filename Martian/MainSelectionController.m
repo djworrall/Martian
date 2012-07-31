@@ -10,17 +10,11 @@
 #import "AppDelegate.h"
 
 @implementation MainSelectionController
-@synthesize data, mainSelectionOutline, subscriptions, redditController;
+@synthesize data, mainSelectionOutline, redditController, treeController;
 
 - (void)awakeFromNib
 {
-    for (NSString * item in [[AppDelegate dataPlist] objectForKey:@"expandedItems"])
-    {
-        if ([item isEqualToString:@"Subscriptions"])
-            [mainSelectionOutline expandItem:[mainSelectionOutline itemAtRow:2]];
-        
-        [mainSelectionOutline reloadData];
-    }
+    
 }
 
 - (id)init
@@ -35,8 +29,7 @@
             
             [dataPlist setObject:@"YES" forKey:@"firstLaunch"];
             
-            [self setSubscriptions:[NSMutableDictionary dictionaryWithObject:[NSMutableArray arrayWithObjects:@"Technology",@"Science",@"Apple",nil] forKey:@"Subscriptions"]];
-            [self setData:[NSMutableArray arrayWithObjects:@"Front page",@"Messages",[NSDictionary dictionaryWithObject:subscriptions forKey:@"Subscriptions"], nil]];
+            [self setData:[NSMutableDictionary dictionaryWithObjectsAndKeys:[NSMutableArray arrayWithObjects:@"Front page",@"Messages",nil],@"Main",[NSMutableArray arrayWithObjects:@"Technology",@"Science",@"Apple",nil],@"Subscriptions",nil]];
             
             [dataPlist writeToFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Data.plist"] atomically:YES];
         }
@@ -45,12 +38,6 @@
             NSMutableDictionary * dataPlist = [AppDelegate dataPlist];
             
             [self setData:[dataPlist objectForKey:@"outlineData"]];
-            
-            for (int i = 0; i != [[dataPlist objectForKey:@"outlineData"] count]; ++i)
-            {
-                if ([[[dataPlist objectForKey:@"outlineData"] objectAtIndex:i] isKindOfClass:[NSMutableDictionary class]])
-                    [self setSubscriptions:[[dataPlist objectForKey:@"outlineData"] objectAtIndex:i]];
-            }
         }
     
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidEndEditing:) name:@"NSControlTextDidEndEditingNotification" object:nil];
@@ -59,72 +46,54 @@
     return self;
 }
 
-- (NSView*)outlineView:(NSOutlineView *)outlineView viewForTableColumn:(NSTableColumn *)tableColumn item:(id)item
+- (id)outlineView:(NSOutlineView *)outlineView child:(NSInteger)index ofItem:(id)item
 {
-    NSTableCellView * aView = [outlineView makeViewWithIdentifier:[tableColumn identifier] owner:self];
-    
-    if ([item isKindOfClass:[NSDictionary class]])
-        item = [[item allKeys] objectAtIndex:0];
-    
-    if (item == @"")
-        [[aView textField] setSelectable:NO]; // Broken; need a way to set the selectablity of the cell, not just the textField.
-        
-    [[aView textField] setStringValue:item];
-    return aView;
+    if (!item)
+    {
+        // Root node, so we return the key for which index it requires
+        return [[[data allKeys] sortedArrayUsingSelector:@selector(compare:)] objectAtIndex:index];
+    }
+    else
+    {
+        return [[data objectForKey:item] objectAtIndex:index];
+    }
 }
 
 - (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item
 {
-    if (item == nil)
+    if (!item)
     {
-        return [data count];
+        // Root node
+        return [[data allKeys] count];
     }
-    else if ([item isKindOfClass:[NSDictionary class]])
+    else
     {
-        return [[item objectForKey:[[item allKeys] objectAtIndex:0]] count];
+        if ([item isKindOfClass:[NSArray class]])
+            return [item count];
+        else
+            return [[data objectForKey:item] count];
+    }
+}
+
+- (NSView*)outlineView:(NSOutlineView *)outlineView viewForTableColumn:(NSTableColumn *)tableColumn item:(id)item
+{
+    if (item == @"")
+    {
+        NSTableCellView * aView = [outlineView makeViewWithIdentifier:@"DataCell" owner:self];
+        [[aView textField] setSelectable:NO]; // Broken; need a way to set the selectablity of the cell, not just the textField.
+        [[aView textField] setStringValue:item];
+        
+        return aView;
     }
     
-    return 0;
-}
-
-- (BOOL)outlineView:(NSOutlineView *)outlineView isItemExpandable:(id)item
-{
-    if ([self outlineView:outlineView numberOfChildrenOfItem:item] > 0)
+    if ([item isKindOfClass:[NSString class]])
     {
-        return YES;
-    }
-    
-    return NO;
-}
-
-- (BOOL)outlineView:(NSOutlineView *)outlineView shouldEditTableColumn:(NSTableColumn *)tableColumn item:(id)item
-{
-    return YES;
-}
-
-- (id)outlineView:(NSOutlineView *)outlineView child:(NSInteger)index ofItem:(id)item
-{
-    if (item == nil)
-    {
-        return [data objectAtIndex:index];
-    }
-    else if ([item isKindOfClass:[NSDictionary class]])
-    {
-        return [[item objectForKey:[[item allKeys] objectAtIndex:0]] objectAtIndex:index];
+        NSTableCellView * aView = [outlineView makeViewWithIdentifier:@"DataCell" owner:self];
+        [[aView textField] setStringValue:item];
+        return aView;
     }
     
     return nil;
-}
-
-- (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(id)item
-{
-    if (item == @"")
-        return NO;
-    
-    [NSThread detachNewThreadSelector:@selector(willDisplayViewForItem:) toTarget:redditController withObject:item];
-    //[redditController willDisplayViewForItem:item];
-    
-    return YES;
 }
 
 - (NSMenu*)defaultMenuForRow:(NSString*)stringRow
@@ -145,7 +114,7 @@
         
         return theMenu;
     }
-    else if ([[subscriptions objectForKey:@"Subscriptions"] containsObject:[[aRow textField] stringValue]])
+    else if ([[self subscriptions] containsObject:[[aRow textField] stringValue]])
     {
         [self selectRow:row];
         
@@ -174,15 +143,15 @@
 
 - (void)removeSubreddit:(id)sender
 {
-    [[subscriptions objectForKey:@"Subscriptions"] removeObject:[[rowToRemove textField] stringValue]];
+    [[self subscriptions] removeObject:[[rowToRemove textField] stringValue]];
     [mainSelectionOutline reloadData];
 }
 
 - (void)addSubreddit:(id)sender
 {
-    NSInteger row = [[subscriptions objectForKey:@"Subscriptions"] count]+[data count];
+    NSInteger row = [[self subscriptions] count]+[data count];
     
-    [[subscriptions objectForKey:@"Subscriptions"] addObject:@"untitled"];
+    [[self subscriptions] addObject:@"untitled"];
     [mainSelectionOutline reloadData];
     [[[self rowForIndex:row] textField] setEditable:YES];
     [mainSelectionOutline reloadData];
@@ -192,10 +161,46 @@
 
 - (void)textDidEndEditing:(NSNotification *)notification
 {
-    NSInteger row = [subscriptions count]+[data count]-1;
+    NSInteger row = [[self subscriptions] count]+[data count]-1;
     [[[self rowForIndex:row] textField] setEditable:NO];
     [mainSelectionOutline reloadData];
     [self selectRow:row];
 }
+
+- (NSMutableArray*)subscriptions
+{
+    return [data objectForKey:@"Subscriptions"];
+}
+
+- (BOOL)outlineView:(NSOutlineView *)outlineView isItemExpandable:(id)item
+{
+    if ([self outlineView:outlineView numberOfChildrenOfItem:item] > 0)
+    {
+        return YES;
+    }
+    
+    return NO;
+}
+
+- (BOOL)outlineView:(NSOutlineView *)outlineView shouldEditTableColumn:(NSTableColumn *)tableColumn item:(id)item
+{
+    return YES;
+}
+
+- (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(id)item
+{
+    if (item == @"")
+        return NO;
+    
+    [NSThread detachNewThreadSelector:@selector(willDisplayViewForItem:) toTarget:redditController withObject:item];
+    
+    return YES;
+}
+
+- (void)outlineView:(NSOutlineView *)outlineView mouseDownInHeaderOfTableColumn:(NSTableColumn *)tableColumn
+{
+    return;
+}
+
 
 @end

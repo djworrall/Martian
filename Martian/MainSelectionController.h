@@ -15,12 +15,12 @@
     NSTableCellView * rowToRemove;
 }
 
-@property (strong) NSMutableArray * data;
-@property (strong) NSMutableDictionary * subscriptions;
+@property (strong) NSMutableDictionary * data;
 
 @property (assign) IBOutlet NSOutlineView * mainSelectionOutline;
 
 @property (strong) RedditController * redditController;
+@property (strong) NSTreeController * treeController;
 
 - (NSTableCellView*)rowForIndex:(NSInteger)index;
 

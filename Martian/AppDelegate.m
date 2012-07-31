@@ -30,10 +30,11 @@
     
     NSMutableArray * expandedItems = [NSMutableArray new];
     
-    for (id item in [mainSelectionController data])
+    for (int i = 0; i != [[[mainSelectionController data] allKeys] count]; ++i)
     {
+        id item = [[[[mainSelectionController data] allKeys] sortedArrayUsingSelector:@selector(compare:)] objectAtIndex:i];
         if ([[mainSelectionController mainSelectionOutline] isItemExpanded:item])
-            [expandedItems addObject:[[item allKeys] objectAtIndex:0]];
+            [expandedItems addObject:item];
     }
     
     [data setObject:expandedItems forKey:@"expandedItems"];
