@@ -31,13 +31,7 @@
         return;
     }
     
-    NSArray * nonSubreddits = [NSArray arrayWithObjects:@"Messages",@"Front page",@"Subscriptions",nil];
-    
-    if (![nonSubreddits containsObject:item])
-    {
-        // We can assume that the section in question are subreddits.
-    }
-    else if ([item isEqualToString:@"Front page"])
+    if ([item isEqualToString:@"Front page"])
     {
         NSMutableDictionary * redditFrontPage = [self dictionaryFromRequest:@"http://api.reddit.com/"];
         

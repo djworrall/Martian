@@ -86,6 +86,15 @@
         return aView;
     }
     
+    if ([[data objectForKey:item] isKindOfClass:[NSArray class]])
+    {
+        // Then we are dealing with headers, e.g Subscription or Main.
+        NSTableCellView * aView = [outlineView makeViewWithIdentifier:@"HeaderCell" owner:self];
+        [[aView textField] setStringValue:item];
+        return aView;
+
+    }
+    
     if ([item isKindOfClass:[NSString class]])
     {
         NSTableCellView * aView = [outlineView makeViewWithIdentifier:@"DataCell" owner:self];
@@ -94,6 +103,11 @@
     }
     
     return nil;
+}
+
+- (BOOL)outlineView:(NSOutlineView *)outlineView isGroupItem:(id)item
+{
+    return [self outlineView:outlineView isItemExpandable:item];
 }
 
 - (NSMenu*)defaultMenuForRow:(NSString*)stringRow
@@ -189,7 +203,9 @@
 
 - (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(id)item
 {
-    if (item == @"")
+    NSArray * execptions = [NSArray arrayWithObjects:@"Main",@"Subscriptions",@"",nil];
+    
+    if ([execptions containsObject:item])
         return NO;
     
     [NSThread detachNewThreadSelector:@selector(willDisplayViewForItem:) toTarget:redditController withObject:item];
